@@ -4,8 +4,9 @@ class hosts::params {
 	case $::operatingsystem {
 		
 		default: {
-			$owner = 'root'
-			$group = 'root'
+			$hostsfile = '/etc/hosts'
+			$owner     = 'root'
+			$group     = 'root'
 		}
 	}
 }

@@ -1,10 +1,8 @@
 
-class hosts::config {
+class hosts::config($entries = [], $ensure = present) {
 
-	# It is easier to include variables in this scope
-	# than to call scope.lookupvar('scope::varname')
-	# inside the template
-	
+	include $hosts::params
+
 	File {
 		ensure  => present,
 		mode    => 0644,
@@ -12,8 +10,8 @@ class hosts::config {
 		group   => $hosts::params::group,
 	}
 
-	file { '/etc/hosts':
-		content => template("hosts/hosts.erb")
+	file { $hosts::params::hostsfile:
+		content => template('hosts/hosts.erb')
 	}
 }
 
