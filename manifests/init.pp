@@ -20,6 +20,8 @@
 #
 # Requires:
 #
+#	puppet-motd: https://github.com/torian/puppet-motd
+#
 # Sample Usage:
 #
 #   node mynode.example.com {
@@ -32,10 +34,18 @@
 #     
 #   }
 # 
-class hosts($entries = [], $ipv6 = false, $ensure = present) {
-
+class hosts(
+	$entries     = [],
+	$ipv6        = false,
+	$enable_motd = true,
+	$ensure      = present) {
+	
 	include hosts::params
-
+	
+	if($enable_motd) {
+		motd::register { 'Hosts': }
+	}
+	
 	File {
 		ensure  => present,
 		mode    => 0644,
