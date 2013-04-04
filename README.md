@@ -9,6 +9,7 @@ Manage hosts definitions in the system hosts file
 Examples
 --------
 
+```puppet
     node mynode.example.com {
       
       class { 'hosts': 
@@ -16,11 +17,7 @@ Examples
       }
       
     }
-
-Notes
------
-
-  None
+```
 
 Issues
 ------
