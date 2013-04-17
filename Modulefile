@@ -1,0 +1,8 @@
+name    'torian-hosts'
+version '0.0.1'
+source 'https://github.com/torian/puppet-hosts'
+author 'Emiliano Castagnari ecastag@gmail.com (aka Torian)'
+license 'Apache'
+summary 'Hosts module for Puppet.'
+description 'Manage /etc/hosts via Puppet'
+project_page 'https://github.com/torian/puppet-hosts'

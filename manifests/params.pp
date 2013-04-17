@@ -3,18 +3,24 @@ class hosts::params {
 
 	case $::operatingsystem {
 		
-		Debian: {
+		'Debian': {
 			$hostsfile = '/etc/hosts'
 			$owner     = 'root'
 			$group     = 'root'
 		}
 		
-		Redhat: {
+		'Redhat': {
 			$hostsfile = '/etc/hosts'
 			$owner     = 'root'
 			$group     = 'root'
 		}
 		
+		'SLES': {
+			$hostsfile = '/etc/hosts'
+			$owner     = 'root'
+			$group     = 'root'
+		}
+
 		default: {
 			fail("Operating system ${::operatingsystem} not supported yet")
 		}
