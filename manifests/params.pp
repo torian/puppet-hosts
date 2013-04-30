@@ -1,29 +1,35 @@
 
 class hosts::params {
 
-	case $::operatingsystem {
-		
-		'Debian': {
-			$hostsfile = '/etc/hosts'
-			$owner     = 'root'
-			$group     = 'root'
-		}
-		
-		'Redhat': {
-			$hostsfile = '/etc/hosts'
-			$owner     = 'root'
-			$group     = 'root'
-		}
-		
-		'SLES': {
-			$hostsfile = '/etc/hosts'
-			$owner     = 'root'
-			$group     = 'root'
-		}
+  case $::operatingsystem {
+      
+    'Debian': {
+      $hostsfile = '/etc/hosts'
+      $owner     = 'root'
+      $group     = 'root'
+    }
+        
+    'Redhat': {
+      $hostsfile = '/etc/hosts'
+      $owner     = 'root'
+      $group     = 'root'
+    }
 
-		default: {
-			fail("Operating system ${::operatingsystem} not supported yet")
-		}
-	}
+    'OVS': {
+      $hostsfile = '/etc/hosts'
+      $owner     = 'root'
+      $group     = 'root'
+    }
+        
+    /(OpenSuSE|SLES)/: {
+      $hostsfile = '/etc/hosts'
+      $owner     = 'root'
+      $group     = 'root'
+    }
+
+    default: {
+      fail("Operating system ${::operatingsystem} not supported yet")
+    }
+  }
 }
 
