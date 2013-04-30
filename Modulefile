@@ -1,5 +1,5 @@
 name    'torian-hosts'
-version '0.0.1'
+version '0.0.2'
 source 'https://github.com/torian/puppet-hosts'
 author 'Emiliano Castagnari ecastag@gmail.com (aka Torian)'
 license 'Apache'
