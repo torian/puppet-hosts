@@ -1,4 +1,5 @@
 
 2013-07-01 - Version 0.0.1
  * Initial commit
+ * lo can now be specified to provide additional hostnames to the loopback
  
