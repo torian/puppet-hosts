@@ -3,8 +3,12 @@
 # Manual changes are likey to be overwritten
 ###############################################################################
 
-127.0.0.1		localhost.localdomain localhost
+<% if @lo -%>
+<%= @lo %>
+<% else -%>
+127.0.0.1       localhost.localdomain localhost
+<% end -%>
 
-<% entries.each do |entry| -%>
+<% @entries.each do |entry| -%>
 <%= entry %>
 <% end -%>

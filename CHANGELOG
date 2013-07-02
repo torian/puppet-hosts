@@ -1,6 +1,11 @@
+2013-07-02 - Version 0.0.3
+ * Initial commit
+ * lo can now be specified to provide additional hostnames to the loopback
+
 2013-04-29 - Version 0.0.2
  * Added support for OVS
  * Added support for OpenSuSE 12.x / SLES 11.x
 
 2013-02-25 - Version 0.0.1
  * Initial commit
+

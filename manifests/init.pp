@@ -35,26 +35,27 @@
 #   }
 # 
 class hosts(
-	$entries     = [],
-	$ipv6        = false,
-	$enable_motd = true,
-	$ensure      = present) {
+  $entries     = [],
+  $ipv6        = false,
+  $enable_motd = true,
+  $lo          = false,
+  $ensure      = present) {
 	
-	include hosts::params
+  include hosts::params
 	
-	if($enable_motd) {
-		motd::register { 'Hosts': }
-	}
+  if($enable_motd) {
+    motd::register { 'Hosts': }
+  }
 	
-	File {
-		ensure  => present,
-		mode    => 0644,
-		owner   => $hosts::params::owner,
-		group   => $hosts::params::group,
-	}
+  File {
+    ensure  => present,
+    mode    => '0644',
+    owner   => $hosts::params::owner,
+    group   => $hosts::params::group,
+  }
 
-	file { $hosts::params::hostsfile:
-		content => template('hosts/hosts.erb')
-	}
+  file { $hosts::params::hostsfile:
+    content => template('hosts/hosts.erb')
+  }
 }
 

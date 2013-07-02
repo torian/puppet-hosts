@@ -3,25 +3,25 @@ class hosts::params {
 
   case $::operatingsystem {
       
-    'Debian': {
+    /^(?i:Debian|Ubuntu)/: {
       $hostsfile = '/etc/hosts'
       $owner     = 'root'
       $group     = 'root'
     }
         
-    'Redhat': {
+    /^(?i:Redhat|CentOS|fedora)/: {
       $hostsfile = '/etc/hosts'
       $owner     = 'root'
       $group     = 'root'
     }
 
-    'OVS': {
+    /^(OVS|OEL)/: {
       $hostsfile = '/etc/hosts'
       $owner     = 'root'
       $group     = 'root'
     }
         
-    /(OpenSuSE|SLES)/: {
+    /^(?i:OpenSuSE|SLES)/: {
       $hostsfile = '/etc/hosts'
       $owner     = 'root'
       $group     = 'root'
