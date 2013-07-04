@@ -37,7 +37,7 @@
 class hosts(
   $entries     = [],
   $ipv6        = false,
-  $enable_motd = true,
+  $enable_motd = false,
   $lo          = false,
   $ensure      = present) {
 	
